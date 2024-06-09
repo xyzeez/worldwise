@@ -7,7 +7,16 @@ import Pricing from './pages/Pricing';
 import PageNotFound from './pages/PageNotFound';
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;

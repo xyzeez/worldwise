@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 // Pages
 import Home from './pages/home/Home';
@@ -12,6 +12,8 @@ import PageNotFound from './pages/PageNotFound';
 // Components
 import CityList from './components/city/CityList';
 import CountryList from './components/country/CountryList';
+import City from './components/city/City';
+import Form from './components/form/Form';
 
 // Variables
 const url = 'http://localhost:8000/cities';
@@ -47,18 +49,17 @@ const App = () => {
         <Route path="product" element={<Product />} />
         <Route path="login" element={<Login />} />
         <Route path="app" element={<AppLayout />}>
-          <Route
-            index
-            element={<CityList data={cities} loading={isLoading} />}
-          />
+          <Route index element={<Navigate replace to="cities" />} />
           <Route
             path="cities"
             element={<CityList data={cities} loading={isLoading} />}
           />
+          <Route path="cities/:id" element={<City />} />
           <Route
             path="countries"
             element={<CountryList data={cities} loading={isLoading} />}
           />
+          <Route path="form" element={<Form />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>

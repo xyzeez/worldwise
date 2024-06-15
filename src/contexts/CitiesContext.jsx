@@ -1,10 +1,13 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
+// Variables
+const url = 'http://localhost:8000/cities';
+
 const CitiesContext = createContext(null);
 
 const CitiesProvider = ({ children }) => {
-  const url = 'http://localhost:8000/cities';
   const [cities, setCities] = useState([]);
+  const [currCity, setCurrCity] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -25,8 +28,24 @@ const CitiesProvider = ({ children }) => {
 
     fetchCities();
   }, []);
+
+  const getCity = async (id) => {
+    try {
+      setIsLoading(true);
+
+      const res = await fetch(`${url}/${id}`);
+      const data = await res.json();
+
+      setCurrCity(data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <CitiesContext.Provider value={{ cities, isLoading }}>
+    <CitiesContext.Provider value={{ cities, isLoading, getCity, currCity }}>
       {children}
     </CitiesContext.Provider>
   );

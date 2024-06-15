@@ -11,6 +11,7 @@ import PageNotFound from './pages/PageNotFound';
 
 // Components
 import CityList from './components/city/CityList';
+import CountryList from './components/country/CountryList';
 
 // Variables
 const url = 'http://localhost:8000/cities';
@@ -23,10 +24,10 @@ const App = () => {
     const fetchCities = async () => {
       try {
         setIsLoading(true);
+
         const res = await fetch(url);
         const data = await res.json();
 
-        console.log(data);
         setCities(data);
       } catch (error) {
         console.error(error);
@@ -54,7 +55,10 @@ const App = () => {
             path="cities"
             element={<CityList data={cities} loading={isLoading} />}
           />
-          <Route path="countries" element={<p>Testing2</p>} />
+          <Route
+            path="countries"
+            element={<CountryList data={cities} loading={isLoading} />}
+          />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>

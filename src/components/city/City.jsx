@@ -1,5 +1,8 @@
 import styles from './City.module.css';
 
+// Components
+// import ButtonBack from '../';
+
 const formatDate = (date) =>
   new Intl.DateTimeFormat('en', {
     day: 'numeric',
@@ -50,9 +53,7 @@ const City = () => {
         </a>
       </div>
 
-      <div>
-        <ButtonBack />
-      </div>
+      <div>{/* <ButtonBack /> */}</div>
     </div>
   );
 };

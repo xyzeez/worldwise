@@ -12,8 +12,8 @@ const formatDate = (date) =>
     weekday: 'long',
   }).format(new Date(date));
 
-const CityItem = ({ data }) => {
-  const { cityName, emoji, date, id, position } = data;
+const CityItem = ({ cities }) => {
+  const { cityName, emoji, date, id, position } = cities;
 
   return (
     <li>

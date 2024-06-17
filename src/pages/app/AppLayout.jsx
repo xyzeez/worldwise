@@ -1,16 +1,20 @@
 import styles from './AppLayout.module.css';
 
 // Components
-import AppNav from '../../components/AppNav/AppNav';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Map from '../../components/map/Map';
+import User from '../../components/user/User';
+import ProtectedRoute from '../ProtectedRoute';
 
 const AppLayout = () => {
   return (
-    <div className={styles.app}>
-      <Sidebar />
-      <Map />
-    </div>
+    <ProtectedRoute>
+      <div className={styles.app}>
+        <Sidebar />
+        <Map />
+        <User />
+      </div>
+    </ProtectedRoute>
   );
 };
 

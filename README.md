@@ -4,7 +4,7 @@ This is a React project developed using [Vite](https://vitejs.dev/) as part of '
 
 ## What I learned
 
-In this project, I build a web app that keeps track of places visited on the world map and provides a visible list and side notes. With this project,I was able to grasp the fundamentals of React, covering topics such as:
+In this project, I build a web app that keeps track of places visited on the world map and provides a visible list and side notes. With this project, I was able to further my understanding of React, covering topics such as:
 
 Sure, here is the concise list:
 

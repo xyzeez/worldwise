@@ -6,8 +6,6 @@ This is a React project developed using [Vite](https://vitejs.dev/) as part of '
 
 In this project, I build a web app that keeps track of places visited on the world map and provides a visible list and side notes. With this project, I was able to further my understanding of React, covering topics such as:
 
-Sure, here is the concise list:
-
 - Managing state with `useReducer`.
 - Using CSS Modules for styling.
 - Creating single-page applications (SPA) with React Router.
@@ -18,6 +16,9 @@ Sure, here is the concise list:
 - Creating and providing context with Context API.
 - Consuming context with `useContext`.
 - Combining Context API with `useReducer` for advanced state management.
+- Performance Optimization and Wasted Renders
+- memo, useMemo and useCallback
+- Optimizing Bundle Size with Code Splitting/lazyloading
 
 ### Screenshot
 
